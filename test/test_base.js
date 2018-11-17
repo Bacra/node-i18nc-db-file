@@ -7,7 +7,7 @@ const requireAfterWrite = autoTestUtils.requireAfterWrite('output');
 const INPUT_PATH        = __dirname + '/input/';
 
 
-describe('#load_db', function()
+describe('#base', function()
 {
 	describe('#async', function()
 	{
