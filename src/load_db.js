@@ -36,6 +36,8 @@ async function autoLoadDB(inputs)
 
 	let dataArr = await Promise.map(inputs, async function(input)
 		{
+			if (typeof input == 'object') return i18ncDB.update(input);
+
 			let stats = await fs.statAsync(input);
 
 			if (stats.isFile())
@@ -93,6 +95,8 @@ function autoLoadDBSync(inputs)
 
 	let dataArr = inputs.map(function(input)
 	{
+		if (typeof input == 'object') return i18ncDB.update(input);
+
 		let stats = fs.statSync(input);
 
 		if (stats.isFile())

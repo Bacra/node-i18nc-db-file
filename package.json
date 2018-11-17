@@ -1,6 +1,6 @@
 {
   "name": "i18nc-db-file",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Load file for i18nc dbs",
   "main": "index.js",
   "scripts": {

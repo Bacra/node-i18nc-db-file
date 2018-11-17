@@ -41,6 +41,16 @@ describe('#base', function()
 				});
 		});
 
+		it('#object', function()
+		{
+			return dbfile(require('./input/en-US.js'))
+				.then(function(json)
+				{
+					let otherJson = requireAfterWrite('en-US_obj.json', json);
+					expect(json).to.eql(otherJson);
+				});
+		});
+
 		it('#mulit args', function()
 		{
 			return dbfile([INPUT_PATH + 'en-US.po', INPUT_PATH + 'en-US.js'])
@@ -73,6 +83,13 @@ describe('#base', function()
 		{
 			let json = dbfile.sync(INPUT_PATH)
 			let otherJson = requireAfterWrite('all.json', json);
+			expect(json).to.eql(otherJson);
+		});
+
+		it('#object', function()
+		{
+			let json = dbfile.sync(require('./input/en-US.js'))
+			let otherJson = requireAfterWrite('en-US_obj.json', json);
 			expect(json).to.eql(otherJson);
 		});
 
